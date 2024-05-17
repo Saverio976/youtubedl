@@ -20,7 +20,7 @@ pub fn (ftype Ftype) str() string {
 
 pub struct RequestId {
 pub:
-	ftype string @[required]
+	ftype Ftype @[required]
 	url   string @[required]
 }
 
