@@ -11,11 +11,11 @@ v install Saverio976.youtubedl
 ## Usage
 
 ```v
-// this use https://www.yt-download.org json api
-import saverio976.youtubedl.ytdownload
+import saverio976.youtubedl
 
 fn main() {
-	println(ytdownload.get_download(ytdownload.RequestId{
+	// this use https://www.yt-download.org json api
+	println(youtubedl.ytdownload_get_download(youtubedl.YtDownloadRequestId{
 		ftype: .mp3
 		url: 'https://www.youtube.com/watch?v=YykjpeuMNEk'
 	})!)
