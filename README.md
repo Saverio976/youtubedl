@@ -42,6 +42,7 @@ import saverio976.youtubedl
 
 fn main() {
 	println(youtubedl.invidious_get_download(youtubedl.InvidiousRequest{
+		// invidious_instance_url: 'https://yt.artemislena.eu' // You can specify an instance, or let the module iterate over all known instances
 		url: 'https://youtu.be/YykjpeuMNEk'
 		media: .audio
 		filters: [youtubedl.InvidiousFilter{

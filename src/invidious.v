@@ -104,6 +104,7 @@ pub:
 
 pub struct InvidiousRequest {
 pub:
+	invidious_instance_url string
 	url     string            @[required]
 	media   InvidiousMedia    @[required]
 	filters []InvidiousFilter @[required]
@@ -125,7 +126,12 @@ struct InvidiousResponse {
 
 pub fn invidious_get_download(request InvidiousRequest) !DownloadInfo {
 	video_id := get_video_id(request.url)!
-	for instance in youtubedl.invidious_instances {
+	instances := if request.invidious_instance_url != '' {
+		[request.invidious_instance_url]
+	} else {
+		youtubedl.invidious_instances
+	}
+	for instance in instances {
 		resp_resp := http.get('${instance}/api/v1/videos/${video_id}') or { continue }
 		if resp_resp.status_code != 200 {
 			continue
