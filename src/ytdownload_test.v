@@ -1,6 +1,6 @@
 module youtubedl
 
-fn test_get_download() {
+fn test_ytdownload_get_download() {
 	download := ytdownload_get_download(YtDownloadRequestId{
 		ftype: .mp3
 		url: 'https://www.youtube.com/watch?v=YykjpeuMNEk'

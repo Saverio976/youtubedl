@@ -10,6 +10,8 @@ v install Saverio976.youtubedl
 
 ## Usage
 
+### https://www.yt-download.org
+
 ```v
 import saverio976.youtubedl
 
@@ -31,4 +33,25 @@ jsVpzpf011Cg4w5YjVjnOpEtCR1D11llfDpKUAkUmeOVeUGSkzIJo%3D'
     extension: 'mp3'
     length_seconds: 261
 }
+```
+
+### https://invidious.io
+
+```v
+import saverio976.youtubedl
+
+fn main() {
+	println(youtubedl.invidious_get_download(youtubedl.InvidiousRequest{
+		url: 'https://youtu.be/YykjpeuMNEk'
+		media: .audio
+		filters: [youtubedl.InvidiousFilter{
+			container: .webm
+			quality: youtubedl.InvidiousQualityAudio.audio_quality_low
+		}]
+	})!)
+}
+```
+*the url expire after some times*
+```v
+
 ```

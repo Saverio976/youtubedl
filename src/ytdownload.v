@@ -21,7 +21,7 @@ pub fn (ftype YtDownloadFtype) str() string {
 pub struct YtDownloadRequestId {
 pub:
 	ftype YtDownloadFtype @[required]
-	url   string @[required]
+	url   string          @[required]
 }
 
 struct YtDownloadRequestIdResponse {
