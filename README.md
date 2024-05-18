@@ -16,7 +16,7 @@ import saverio976.youtubedl
 fn main() {
 	// this use https://www.yt-download.org json api
 	println(youtubedl.ytdownload_get_download(youtubedl.YtDownloadRequestId{
-		ftype: .mp3
+		ftype: .mp3 // can be `.mp4` `.webm` `.mp3`
 		url: 'https://www.youtube.com/watch?v=YykjpeuMNEk'
 	})!)
 }
