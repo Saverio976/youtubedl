@@ -44,10 +44,21 @@ fn main() {
 	println(youtubedl.invidious_get_download(youtubedl.InvidiousRequest{
 		// invidious_instance_url: 'https://yt.artemislena.eu' // You can specify an instance, or let the module iterate over all known instances
 		url: 'https://youtu.be/YykjpeuMNEk'
-		media: .audio
+		media: .audio // can be `.audio` `.video`
 		filters: [youtubedl.InvidiousFilter{
-			container: .webm
+			container: .webm // can be `.webm` `.mp4` `.m4a`
 			quality: youtubedl.InvidiousQualityAudio.audio_quality_low
+			// quality is a sum type of:
+			// - youtubedl.InvidiousQualityAudio
+			//    - audio_quality_low
+			//    - audio_quality_medium
+			// - youtubedl.InvidiousQualityVideo
+			//    - q144p
+			//    - q240p
+			//    - q360p
+			//    - q480p
+			//    - q720p
+			//    - q1080p
 		}]
 	})!)
 }
